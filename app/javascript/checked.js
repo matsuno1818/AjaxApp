@@ -16,7 +16,15 @@ function check() {
         } else if (item.checked === false) {
           post.removeAttribute("data-check");
         }
+        if (XHR.status != 200) {
+          alert(`Error ${XHR.status}: ${XHR.statusText}`);
+        } else {
+          return null;
+        }
       }
+      XHR.onerror = () => {
+        alert("Request failed");
+      };
     });
   });
 }
