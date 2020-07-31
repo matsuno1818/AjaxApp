@@ -4,6 +4,7 @@ function check() {
 
   postsA.forEach(function (post) {
     post.addEventListener("click", (e) => { });
+      const postId = post.getAttribute("data-id");
   });
 }
 window.addEventListener("load", check);
